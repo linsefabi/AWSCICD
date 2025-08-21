@@ -1,0 +1,27 @@
+1. create mvc app and configure docker image in csproj
+ <ContainerImageTags>1.0.0;latest</ContainerImageTags>
+  <ContainerRepository>bookmanager</ContainerRepository>
+  <PublishProfile>DefaultContainer</PublishProfile>
+2.push it to git hub
+3. install docker desktop for windows +  Windows Subsystem for Linux 2.5.10 has been installed.
+4. goto .csproj dir in cmd , then run     dotnet publish --os linux --arch x64(Remember to run docker desktop behind) --> docker img created under docker desktop
+5. configure GitHub actions for CI/CD 
+
+
+
+running images in docker 
+open project folder, copy address/  CMD --> goto project location and run the following commands
+
+1.git clone https://github.com/docker/welcome-to-docker
+2.cd welcome-to-docker
+  docker build -t welcome-to-docker
+3.check for images in images tab--> docker desktop
+4.select the image once build is completed. click run Under optional settings , set port number 8089
+5. under containers tab, see your container name and click 8089:3000
+View the frontend output in chrome.
+
+
+
+
+
+https://codewithmukesh.com/blog/github-actions-deploy-dotnet-webapi-to-amazon-ecs/
